@@ -1,0 +1,43 @@
+.card{
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 2rem;
+
+
+}
+
+.card:hover{
+  transform: scale3d(1.05 , 1.05 ,1.05);
+}
+
+.card-body{
+  background-color: black;
+}
+
+.nom{
+  color: white;
+}
+.annee{
+  color: white;
+}
+
+.heart{
+  position: relative;
+  left: 40px;
+  background: transparent;
+  color: red;
+}
+
+.heart:hover{
+  transform: scale3d(1.05 , 1.05 ,1.05);
+}
+
+.details{
+  position: relative;
+  right: 40px;
+}
+
+.img{
+  height: 300px;
+}
+

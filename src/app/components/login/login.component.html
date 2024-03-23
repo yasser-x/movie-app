@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+</head>
+<body>
+
+<div class="login-container">
+  <h2>Login</h2>
+  <form class="login-form" id="loginForm">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+      <button type="button" onclick="validateLogin()">Login</button>
+    </div>
+  </form>
+  <div class="message" id="errorMessage"></div>
+  <p>Don't have an account?</p>
+  <a class="signup" [routerLink]="'/Signup/'">Sign up</a>
+</div>
+
+<script>
+  function validateLogin() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var errorMessage = document.getElementById('errorMessage');
+
+    // Perform your login validation logic here
+    // For this example, let's just check if both fields are filled
+    if (username.trim() === '' || password.trim() === '') {
+      errorMessage.textContent = 'Please enter both username and password.';
+    } else {
+      // Clear any previous error message
+      errorMessage.textContent = '';
+
+      // Perform additional login logic or redirect to another page
+      // For now, just log to the console
+      console.log('Login successful!');
+    }
+  }
+</script>
+
+</body>
+</html>

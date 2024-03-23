@@ -1,0 +1,38 @@
+
+
+<div class="card mb-2 detail" *ngIf="movie?.id">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img  [src]="getImage(movie.poster_path)" class="img" alt="{{movie.title}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class=" h1 text">{{movie?.title}}</h5> <hr>
+        <p class="card-text overview">{{movie?.overview}}</p>
+        <p class="card-text  "> <span class="text">Release Date:</span>  {{movie?.release_date | date:'mediumDate'}}</p>
+        <p class="card-text "> <span class="text">Runtime:</span>  {{movie?.runtime}} minutes</p>
+        <p class="card-text "> <span class="text"> Tagline:</span> {{movie?.tagline}}</p>
+        <p class="card-text"> <span class="text">Rating: </span>{{getStarRating(movie?.vote_average)}}</p>
+        <p class="card-text  "><span class="text">Vote count:</span> {{movie?.vote_count}}</p>
+        <p class="card-text comments"><small class="comments">
+          <button class="button text" onclick="toggleVisibility()" >Comments</button>
+          <p class="hidden-element" id="contentToDisplay"><app-list-comments></app-list-comments></p>
+          <script>
+            function toggleVisibility() {
+              var contentElement = document.getElementById('contentToDisplay');
+              contentElement.style.display = (contentElement.style.display === 'block') ? 'none' : 'block';
+            }
+          </script>
+          <button class="add text" (click)="toggleInput()">Toggle Input</button>
+          <input class="input" id="comment" *ngIf="showInput" type="text" placeholder="Enter something" [(ngModel)]="inputValue">
+          <button (click)="addcomments(movie?.id, getText())" type="submit" >Ok</button>
+
+
+        </small></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

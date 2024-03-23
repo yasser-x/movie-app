@@ -1,0 +1,49 @@
+.detail{
+  margin: 10%;
+  border-color: red ;
+  background: linear-gradient(to right, #ff9900, #c0c0c0);
+}
+
+.title{
+  font-family: "Palatino Linotype";
+  position: relative;
+  margin-top: 0;
+  color: black;
+}
+
+.text{
+  font-weight: Bold;
+  font-family: "Agency FB";
+  font-size: 20px;
+}
+
+.img{
+  border-radius: 20px;
+  box-shadow: black 9px 10px 10px;
+  position: relative;
+  top: 50px;
+  margin-right: 15px;
+}
+
+.img:hover{
+  transform-style: flat;
+  transform: scale(1.03);
+}
+
+.hidden-element {
+  display: none;
+}
+
+.button:hover + .hidden-element {
+  display: block;
+}
+
+.add {
+  position: relative;
+  left: 100px;
+}
+
+.input{
+  position: relative;
+  left: 130px;
+}
